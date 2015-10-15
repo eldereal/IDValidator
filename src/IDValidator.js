@@ -180,9 +180,13 @@
      };
 
      var _IDValidator = function(GB2260){
-         if( typeof GB2260 !== "undefined" ){
+         
+        if( typeof GB2260 === "object" ){
              this.GB2260 = GB2260;
-         }
+        }
+        if( typeof(GB2260) === "boolean" && GB2260){
+            this.GB2260 = require("./GB2260.js");
+        }
          //建立cache
          this.cache = {};
      };
